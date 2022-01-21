@@ -1,0 +1,7 @@
+## Interface: 90105
+## Title: AutoHideBinds
+## Author: erikbrgn
+## Version: 1.0.0
+## Notes: Hides binds and macro names, but shows them on mouseover.
+
+AutoHideBinds.lua
