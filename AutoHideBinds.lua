@@ -10,6 +10,8 @@ function AHB:HookBinds()
 		for btnnum=1, 12 do
 			local btn = bar.."Button"..btnnum
 			if _G[btn] then
+                self:StyleBind(_G[btn.."HotKey"])
+
                 -- Hide binds and disable :Show()
                 _G[btn.."HotKey"]:Hide()
                 _G[btn.."HotKey"].Show = ef
@@ -33,6 +35,15 @@ function AHB:HookBinds()
 	end
 end
 
+function AHB:StyleBind(frame)
+    if frame then
+        frame:ClearAllPoints()
+        frame:SetPoint("CENTER")
+        frame:SetJustifyH("CENTER")
+        frame:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE") 
+    end
+end
+
 AHBFrame:RegisterEvent("ADDON_LOADED")
 AHBFrame:SetScript("OnEvent", function (self, event, ...)
     local name = ...
@@ -40,4 +51,3 @@ AHBFrame:SetScript("OnEvent", function (self, event, ...)
         AHB:HookBinds()
     end
 end)
-
