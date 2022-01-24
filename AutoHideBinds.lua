@@ -21,6 +21,7 @@ function AHB:HookBinds()
 				_G[btn.."Name"].Show = ef
 
                 _G[btn]:HookScript("OnEnter", function ()
+                    self:AdjustTextSize(_G[btn.."HotKey"])
                     -- :Show() has been "unbound" because it's run all the time for some reason,
                     -- making it impossible to hide binds. We use the alternative function to show binds.
                     _G[btn.."HotKey"]:SetShown(true)
@@ -41,6 +42,17 @@ function AHB:StyleBind(frame)
         frame:SetPoint("CENTER")
         frame:SetJustifyH("CENTER")
         frame:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE") 
+    end
+end
+
+function AHB:AdjustTextSize(frame)
+    if frame:GetStringHeight() <=12 then
+        return
+    end
+
+    if frame:IsTruncated() then
+        frame:SetTextHeight(frame:GetStringHeight() - 2)
+        self:AdjustTextSize(frame)
     end
 end
 
