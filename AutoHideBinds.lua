@@ -49,6 +49,8 @@ function AHB:StyleBind(frame)
         frame:SetPoint("CENTER")
         frame:SetJustifyH("CENTER")
         frame:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE")
+        -- We have to "unset" the :SetPoint() function to make sure the HotKey isn't moved.
+        frame.SetPoint = function() end
     end
 end
 
