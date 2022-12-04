@@ -11,8 +11,6 @@ function AHB:HookBinds()
         for btnnum = 1, 12 do
             local btn = bar .. "Button" .. btnnum
             if _G[btn] then
-                self:StyleBind(_G[btn .. "HotKey"])
-
                 -- Hide binds and disable :Show()
                 _G[btn .. "HotKey"]:Hide()
                 _G[btn .. "HotKey"].Show = ef
@@ -27,6 +25,7 @@ function AHB:HookBinds()
                     -- making it impossible to hide binds. We use the alternative function to show binds.
                     local hotkeytext = _G[btn .. "HotKey"]:GetText();
                     if hotkeytext ~= "" and hotkeytext ~= "●" then
+                        self:StyleBind(_G[btn .. "HotKey"])
                         _G[btn .. "HotKey"]:SetShown(true)
                     end
 
@@ -44,14 +43,10 @@ function AHB:HookBinds()
 end
 
 function AHB:StyleBind(frame)
-    if frame:GetText() ~= "" then
-        frame:ClearAllPoints()
-        frame:SetPoint("CENTER")
-        frame:SetJustifyH("CENTER")
-        frame:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE")
-        -- We have to "unset" the :SetPoint() function to make sure the HotKey isn't moved.
-        frame.SetPoint = function() end
-    end
+    frame:ClearAllPoints()
+    frame:SetPoint("CENTER")
+    frame:SetJustifyH("CENTER")
+    frame:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE")
 end
 
 function AHB:AdjustTextSize(frame)
