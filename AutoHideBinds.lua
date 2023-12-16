@@ -6,7 +6,7 @@ local AHBFrame = CreateFrame("Frame", nil, UIParent)
 
 function AHB:HookBinds()
     local ef = function() end
-    for n, bar in ipairs({ "Action", "MultiBarBottomLeft", "MultiBarBottomRight", "MultiBarRight", "MultiBarLeft",
+    for _, bar in ipairs({ "Action", "MultiBarBottomLeft", "MultiBarBottomRight", "MultiBarRight", "MultiBarLeft",
         "MultiBar5", "MultiBar6", "MultiBar7" }) do
         for btnnum = 1, 12 do
             local btn = bar .. "Button" .. btnnum
@@ -61,7 +61,7 @@ function AHB:AdjustTextSize(frame)
 end
 
 AHBFrame:RegisterEvent("ADDON_LOADED")
-AHBFrame:SetScript("OnEvent", function(self, event, ...)
+AHBFrame:SetScript("OnEvent", function(_, event, ...)
     local name = ...
     if event == "ADDON_LOADED" and name == "AutoHideBinds" then
         AHB:HookBinds()
