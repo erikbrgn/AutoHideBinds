@@ -2,9 +2,9 @@
 
 AutoHideBinds is a WoW addon used for hiding binds and macro names. On mouseover both are shown, making it easy to refresh your memory without the ugliness of showing them at all times.
 
-<img src="https://media.forgecdn.net/attachments/428/23/autohidebinds.PNG" alt="Binds/macro names are hidden">
+![Binds/macro names are hidden](https://github.com/erikbrgn/AutoHideBinds/assets/34570871/7b29a72e-1824-4498-9e0c-0f18ad71b598)
 
-<img src="https://media.forgecdn.net/attachments/428/24/autohidebinds_shown.PNG" alt="On mouseover, binds/macro names are displayed">
+![On mouseover, binds/macro names are displayed](https://github.com/erikbrgn/AutoHideBinds/assets/34570871/ac739b00-d3e0-4704-8b0d-dd94c05e3750)
 
 ## Install
 
